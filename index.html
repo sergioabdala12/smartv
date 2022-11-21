@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        iframe{
+            position:relative;
+            width: 100%;
+            height: 100%;
+        }
+        button{
+            position: relative;
+        }
+        #div1{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        #div2{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    
+    div1 = document.createElement("div")
+    div1.id = "div1"
+    document.body.appendChild(div1)
+
+    div2 = document.createElement("div")
+    div2.id = "div2"
+    document.body.appendChild(div2)
+
+    aa = document.createElement("button")
+    aa.innerText = "Globo"
+    aa.onclick = function(){
+        document.getElementById("Tela").src="https://sinalpublico.com/player3/ch.php?canal=boborj"        
+    }
+    div1.appendChild(aa)
+
+    aa2 = aa.cloneNode(true)
+    aa2.innerText = "Band"
+    aa2.onclick = function(){
+        document.getElementById("Tela").src="https://sinalpublico.com/player3/ch.php?canal=band"        
+    }
+    div1.appendChild(aa2)
+
+
+
+
+
+    //-------------------------
+    vid = document.createElement("iframe")
+    vid.id = "Tela"
+    vid.src="https://sinalpublico.com/player3/ch.php?canal=boborj"
+    vid.scrolling="no"
+    vid.setAttribute('allowFullScreen', '')
+    div2.appendChild(vid)
+</script>
+
+
+		
+</body>
+</html>
